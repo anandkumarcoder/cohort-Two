@@ -9,5 +9,33 @@ There is no automated test for this one, this is more for you to understand time
 */
 
 function calculateTime(n) {
-    return 0.01;
+
+    const startTime = performance.now(); // Get the start timestamp
+
+
+    for (let i = 0; i < 1000000000; i++) {
+        
+        n = n + i
+        //console.log(n);
+        
+    }
+
+    const endTime = performance.now(); // Get the end timestamp
+
+    const timeTaken = endTime - startTime; // Calculate time taken in milliseconds
+
+
+    console.log(`Sum: ${n}`);
+    console.log(`Time taken: ${timeTaken} milliseconds`);
+    return n;
 }
+
+calculateTime(0)
+
+// sum for 1-100 ---> Sum: 4950 and Time taken: 0.1680999994277954 milliseconds
+
+//Sum from 1-100000 ---> /* Sum: 4999950000 Time taken: 3.497699998319149 milliseconds */
+
+// Sum from 1-1000000000 --->   /*   Sum: 499999999067109000 Time taken: 888.0449000000954 milliseconds */
+
+
