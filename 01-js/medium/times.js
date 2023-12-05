@@ -38,4 +38,3 @@ calculateTime(0)
 
 // Sum from 1-1000000000 --->   /*   Sum: 499999999067109000 Time taken: 888.0449000000954 milliseconds */
 
-
