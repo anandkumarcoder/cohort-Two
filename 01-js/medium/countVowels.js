@@ -6,7 +6,24 @@
 */
 
 function countVowels(str) {
-    // Your code here
+  let vowelCount = 0;
+  const stringLower = str.toLowerCase();
+
+  const stringSplit = stringLower.split("");
+
+  for (let i = 0; i < stringSplit.length; i++) {
+    if (
+      stringSplit[i] == "a" ||
+      stringSplit[i] == "e" ||
+      stringSplit[i] == "i" ||
+      stringSplit[i] == "o" ||
+      stringSplit[i] == "u"
+    ) {
+      vowelCount++;
+    }
+  }
+
+  return vowelCount;
 }
 
 module.exports = countVowels;

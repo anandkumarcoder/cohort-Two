@@ -26,6 +26,12 @@ function displayResultPassive(data) {
 }
 
 
+//onst ans = sum(1,2, displayResult)
+//console.log(ans);
+
+
+
+
 // solution 1
 /* const functionOne = sum(1,2);
 const functionTwo = displayResult(functionOne)
@@ -35,6 +41,8 @@ console.log(functionThree);
 
 // THIS WAY WE ARE CALLING MULTIPLE FUNCTION MULTIPLE TIMES*/
 
+function calculateSum() {
+    return sum(10,20)
+}
 
-const ans = sum(1,2, displayResult)
-console.log(ans);
+setTimeout(calculateSum , 3 *1000)
