@@ -14,4 +14,26 @@ function jsonMethods(jsonString) {
 const sampleJSONString =
   '{"key": "value", "number": 42, "nested": {"nestedKey": "nestedValue"}}';
 
-jsonMethods(sampleJSONString);
+//jsonMethods(sampleJSONString);
+
+// example from the video
+
+/* const users = '{"name": "annad", "age" : 25, "gender" : "male"}' // this how data is sent in string format . You dont send JS object data 
+
+// console.log(users["name"]);
+
+// JSON parse
+
+const newUser = JSON.parse(users)
+console.log(newUser["name"]); */
+
+// JSON stringfy - converts object to string
+
+const users = {
+  name: "anand",
+  age: 25,
+  gender: "male",
+};
+
+const finalStirng = JSON.stringify(users);
+console.log(finalStirng);
