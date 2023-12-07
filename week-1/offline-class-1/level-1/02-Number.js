@@ -19,3 +19,5 @@ function explainParseFloat(value) {
 explainParseFloat("3.14");
 explainParseFloat("42");
 explainParseFloat("42px");
+
+// float convert decimal and alphanumber to numbers
