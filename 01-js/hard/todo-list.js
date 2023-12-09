@@ -35,8 +35,17 @@ class Todo {
   // second method - loop
 
   /*  */
+  // - update(index, updatedTodo): update todo at given index
 
-  
+  update(indexToUpdate , updateValue){
+if(indexToUpdate >= this.task.length){
+  console.log("invalid index number")
+}
+this.task[indexToUpdate] = updateValue
+
+  }
+
+
 }
 
 //console.log(Todo);
@@ -49,6 +58,7 @@ taskConstructor.add("task 3")
 taskConstructor.add("task 4")
 console.log("before remove fn " , taskConstructor);
 taskConstructor.remove(5,1)
+taskConstructor.update(3, "task 5")
 
 console.log(taskConstructor);
 
