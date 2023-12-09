@@ -39,13 +39,33 @@ class Todo {
 
   update(indexToUpdate , updateValue){
 if(indexToUpdate >= this.task.length){
-  console.log("invalid index number")
+  // console.log("invalid index number")
+  return null
 }
 this.task[indexToUpdate] = updateValue
 
   }
 
 
+// getAll: returns all todos
+getAll(){
+  return this.task
+}
+
+//  - get(indexOfTodo): returns todo at given index
+
+get(indexOfTodo){
+  if (indexOfTodo >= this.task.length) {
+    return null;
+  }
+  return this.task[indexOfTodo];
+}
+
+
+//- clear: deletes all todos
+clear (){
+  this.task = []
+}
 }
 
 //console.log(Todo);
@@ -60,15 +80,20 @@ console.log("before remove fn " , taskConstructor);
 taskConstructor.remove(5,1)
 taskConstructor.update(3, "task 5")
 
-console.log(taskConstructor);
 
+console.log(taskConstructor.getAll());
+console.log(taskConstructor.get(2));
+taskConstructor.clear()
+
+
+console.log(taskConstructor);
 
 
 
 //  - remove(indexOfTodo): remove todo from list of todos
 /* For this question there are two methods one splice and other is using loop */
-let array = [1, 2, 3, 4, 5];
-array.splice(1, 2);
+// let array = [1, 2, 3, 4, 5];
+// array.splice(1, 2);
 // console.log(array);
 
-//module.exports = Todo;
+module.exports = Todo;
