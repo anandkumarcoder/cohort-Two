@@ -81,23 +81,31 @@ console.log("done"); */
 function myOwnSetTimeout(fn, duration){
   setTimeout(fn, duration)
   // here set time is taking its argument from the function's parameter
+  // here cb is taken as inout 
 }
 
-myOwnSetTimeout(function () {
-  console.log("hi there");
-},3000)
+// myOwnSetTimeout(function () {
+//   console.log("hi there");
+// },3000)
 
-// approach 2 - with promise 
+// approach 2 - with promise , doing the same of above 
 
 function myOwnSetTimeout2(duration) {
   let p = new Promise((resolve) => {
-    setTimeout(resolve,1000)
+    // 
+     setTimeout(resolve,duration) // detailed of this is added below 
+
+   /*  setTimeout(() => {
+      resolve()
+    }, duration); */
   })
 
   return p
 }
 
-myOwnSetTimeout2(1000)
+
+//console.log(myOwnSetTimeout2(2000)); //Promise { <pending> }
+myOwnSetTimeout2(5000)
 .then(function () {
   console.log("log the first thing");
 })
