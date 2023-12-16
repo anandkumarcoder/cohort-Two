@@ -62,7 +62,7 @@ a.then(onDone)
 
 // ---------promise with setTimeout
 
-function kiratsAsyncFunction() {
+/* function kiratsAsyncFunction() {
     
  let p = new Promise(function(resolve) {
    setTimeout(resolve, 5000)
@@ -74,4 +74,48 @@ function kiratsAsyncFunction() {
 const value = kiratsAsyncFunction()
 value.then(function () {
     console.log("hi there from async function");
-})
+}) */
+
+
+// ------------------async await
+
+function kiratsAsyncFunction() {
+    let p = new Promise(function(resolve) {
+      // do some async logic here
+    //   resolve("hi there!") // with case 1
+
+// case 2
+setTimeout(function () {
+    resolve("hi there")
+},3000)
+});
+    return p;
+  }
+
+//   case 1
+  
+//   async function main() {
+// /*  earlier
+//     // kiratsAsyncFunction().then(function(value) {
+//     //     console.log(value); })
+//     */
+
+//     let value = kiratsAsyncFunction()
+//     console.log(value); // Promise { 'hi there!' }
+//     ;
+//   }
+
+
+//   case 2
+
+  async function main() {
+
+
+    let value = await kiratsAsyncFunction()
+    console.log("hi there 2"); // this will also be logged after three  seconds
+    console.log(value); // after 3 seconds of settimeout -> hi there
+    // benifits -> we dont have to write .then() to consume the promises, no callback syntax
+    ;
+  }
+  
+  main();
