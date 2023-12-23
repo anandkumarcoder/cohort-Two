@@ -111,3 +111,4 @@ myOwnSetTimeout2(5000)
 })
 
 // then is for consumption of the promise
+// benfits of promise - promise chaining , async, await 
