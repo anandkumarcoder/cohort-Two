@@ -1,3 +1,9 @@
+
+
+
+
+
+
 function populateDiv() {
     //accessing DOM
 
@@ -8,7 +14,7 @@ function populateDiv() {
 
 
 // hitting the server to do the calcluation
-/* fetch("https://sum-server.100xdevs.com/sum?a=" + firstValue + "&b=" + secondValue).then(function(response){
+fetch("https://sum-server.100xdevs.com/sum?a=" + firstValue + "&b=" + secondValue).then(function(response){
     console.log(response);
     response.text() //this is also promise
     .then(function(ans){
@@ -17,7 +23,7 @@ function populateDiv() {
 
     })
 })
-    */
+   
    
 
 
@@ -41,4 +47,26 @@ async function populateDiv2(){
      const ans = await response.text();
      element.innerHTML = ans
 
+}
+
+// initializing timer
+let timeout ;
+function debouncePopulate() {
+    // delay the call to populateDiv until i've not been called for 100ms
+
+    // and I've been called atleast once
+
+
+    // how to cancel the clock
+     clearTimeout(timeout) // immediately clock gets cancelled 
+    // debounce needs to happen after the user stops typing. i.e when the user types again old timer needs to get cancelled and new setTimer will be called
+    timeout = setTimeout(function(){
+        populateDiv2()
+    }, 1000)
+
+     
+
+   /*  // how to cancel the clock
+    clearTimeout(timeout) // immediately clock gets cancelled 
+    // debounce needs to happen after the user stops typing. i.e when the user types again old timer needs to get cancelled and new setTimer will be called */
 }
