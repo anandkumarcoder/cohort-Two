@@ -14,7 +14,8 @@ function populateDiv() {
 
 
 // hitting the server to do the calcluation
-fetch("https://sum-server.100xdevs.com/sum?a=" + firstValue + "&b=" + secondValue).then(function(response){
+fetch("https://sum-server.100xdevs.com/sum?a=" + firstValue + "&b=" + secondValue)
+.then(function(response){
     console.log(response);
     response.text() //this is also promise
     .then(function(ans){
@@ -22,7 +23,9 @@ fetch("https://sum-server.100xdevs.com/sum?a=" + firstValue + "&b=" + secondValu
         element.innerHTML = ans
 
     })
-})
+
+}) // classic example of callback hell
+
    
    
 
