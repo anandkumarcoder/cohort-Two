@@ -1,6 +1,8 @@
-## week4
+# week4
 
-# DOM Learning
+## DOM Learning
 
--- class vs Ids
--- to make website dynamic we need JS
+- class vs Ids
+- to make website dynamic we need JS
+- use of backend to calculate sum
+- Debounce logic using setTimeout and clearTimeout to make delay calls to backend
