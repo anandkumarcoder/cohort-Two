@@ -21,21 +21,67 @@
 
 <script>
 
+    let globalId = 1
+
+    function markAsDone(todoId){
+        const parent = document.getElementById(todoId); //todoId is pickedup from createElement function where set attribute on button is present
+       
+      parent.children[2].innerHTML = "Done!"
+    }
+
     function addToDo() {
         const title = document.querySelector("#title").value
         const description = document.querySelector("#description").value
+        const mainContainer = document.querySelector("#container")
+        mainContainer.appendChild(createChild(title,description, globalId++))
+
+
+
 // appending method 1
+/*
 const originalHtml = document.querySelector("#container").innerHTML
-
-console.log(originalHtml);
-
-document.querySelector("#container").innerHTML = originalHtml + `
+ document.querySelector("#container").innerHTML = originalHtml + `
 <div>
         <div>${title}</div>
         <div>${description}</div>
         <button>Mark as done</button>
     </div>
-`
+` */
+    // appending method 2 creating and element and appending
+
+    // const outerDiv = document.createElement("div")
+    // console.log(outerDiv);
+    // outerDiv.innerHTML = title
+    // document.querySelector("#container").appendChild(outerDiv)
+
     }
+
+    // function for creating child
+
+
+    function createChild(title, description, id){
+        const mainParent = document.createElement("div")
+        const firstItem = document.createElement("div")
+        firstItem.innerHTML = title
+        const secondItem = document.createElement("div")
+        secondItem.innerHTML = description
+        const thirdItem = document.createElement("button")
+        thirdItem.innerHTML = "Mark as Done"
+
+        // when clicked on button change text to done -- use the function created above
+
+        thirdItem.setAttribute("onClick", `markAsDone(${id})`)
+
+        mainParent.appendChild(firstItem)
+        mainParent.appendChild(secondItem)
+        mainParent.appendChild(thirdItem)
+        // assigning id tp main parent container
+        mainParent.setAttribute("id" , id)
+        return mainParent
+
+    }
+
+
+
 </script>
 </html>
