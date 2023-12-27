@@ -31,3 +31,13 @@ const ans = arr.map((item) => {
 })
 
 console.log(ans);  // [ 2, 4, 6, 8 ]
+
+// give values which are even
+
+// dumb method -- use of loop method and store it in new array
+
+const newAns = arr.filter((item)=> {
+return item % 2 == 0
+})
+
+console.log(newAns);
