@@ -30,7 +30,7 @@ let numberOfRequest = 0
 
 function calculateNumber(req,res,next){
     numberOfRequest ++
-    console.log(numberOfRequest);
+    console.log("request number " + numberOfRequest);
     next()
 }
 
@@ -40,7 +40,7 @@ app.use(calculateNumber)
 
 // better way to do the above using middleware
 
-function authenticationValidator(req, res, next) {
+/* function authenticationValidator(req, res, next) {
   const username = req.headers.username;
   const password = req.headers.password;
 
@@ -73,5 +73,41 @@ app.get(
     res.send("Everything is fine");
   }
 );
+ */
+// input validation
+
+app.use(express.json())// this done so that we can access body
+app.post("/health-checkup", (req,res, next)=>{
+  const kidneys =  req.body.kidneys
+  const kidneyLength = kidneys.length
+
+  // wrong input can be sent from server - to deal with this 
+
+/*   
+if(!kidneys){
+  res.json({
+    msg: "bad inputs"
+  })
+} else {
+  res.send("you have " + kidneyLength + " kidneys")
+} */
+  
+  // res.send("kidneys")
+
+ 
+})
+
+
+ // global catches to do the above of catching wrong input
+
+ app.use((err, req,res,next)=>{
+//    error = err++
+// console.log("error number " + error);
+
+res.json({
+  msg: "sorry something is wrong with server"
+})
+ })
+
 
 app.listen(3000);
