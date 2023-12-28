@@ -78,6 +78,8 @@ app.get(
 
 app.use(express.json())// this done so that we can access body
 app.post("/health-checkup", (req,res, next)=>{
+
+     // accepted format -> kidneys = [1,2]
   const kidneys =  req.body.kidneys
   const kidneyLength = kidneys.length
 
