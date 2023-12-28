@@ -12,7 +12,7 @@ app.get("/health-checkup", (req, res) => {
     });
   }
 
-  if (kidneyID != 1 || kidneyID != 2) {
+  if (kidneyID != 1 && kidneyID != 2) {
     res.status(400).json({
       msg: "something is not right with kidney",
     });
@@ -22,5 +22,4 @@ app.get("/health-checkup", (req, res) => {
     msg: "Your kidney is fine",
   });
 });
-
 app.listen(3000);
