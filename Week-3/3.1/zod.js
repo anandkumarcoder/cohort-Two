@@ -22,4 +22,9 @@ app.post("/health-checkup", (req, res) => {
   }
 });
 
-app.listen(3001);
+app.listen(3000);
+
+
+//go to the postman 
+//select post
+//inside body remove JSON and select text 
