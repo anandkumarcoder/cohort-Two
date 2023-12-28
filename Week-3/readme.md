@@ -9,6 +9,7 @@
 - next () -> executes the next block of code
 
 ## 3.2
-- Fetch
+- Fetch Api
+   - whenever there is aync call to be made use async function and await word before each aync call and promises
 - Authentication
 - Databases
