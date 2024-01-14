@@ -1,5 +1,6 @@
 import UseStateHooks from './UseStateHooks.jsx'
 import UseReducerHook from './UseReducerHook.jsx'
+import UseEffectHooks from './UseEffectHooks.jsx'
 import './App.css'
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
     <>
     {/* <UseStateHooks/> */}
     
-    <UseReducerHook />
+    {/* <UseReducerHook /> */}
+    <UseEffectHooks/>
     </>
   )
 }
